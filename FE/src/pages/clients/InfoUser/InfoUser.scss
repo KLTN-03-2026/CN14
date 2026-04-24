@@ -1,0 +1,20 @@
+
+.card-info{
+  &__menu{
+    ul{
+      list-style-type: none;
+      padding: 0 10px;
+      li{
+        font-size: 16px;
+        margin: 5px 0;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      li.active{
+        color: #FFC234;
+        font-size: 18px;
+      }
+    }
+  }
+
+}

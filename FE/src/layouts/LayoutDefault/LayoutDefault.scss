@@ -1,0 +1,51 @@
+.layout-default {
+
+  &__footer {
+    text-align: center;
+    background: #ffffff;
+    align-items: center;
+  }
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1260px; /* tăng từ 1140px lên để tạo khoảng cách 2 bên */
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px; /* thêm breakpoint cho màn lớn hơn */
+  }
+}
+
+.custom-btn:hover {
+  background-color: #e6f7f7; /* nền nhạt khi hover */
+  color: #006666 !important; /* đậm hơn khi hover */
+}

@@ -1,0 +1,64 @@
+const Account = require("../../models/account.model");
+const md5 = require("md5");
+const Role = require("../../models/roles.model");
+const jwt = require("jsonwebtoken");
+
+// [POST] /api/v1/admin/auth/login
+module.exports.loginPost = async (req, res) => {
+  try {
+    const {email, password} = req.body;
+    const accounts = await Account.find({deleted: false});
+    console.log(email);
+    console.log(accounts[0]);
+    
+    const user = await Account.findOne({
+      email: email,
+      deleted: false
+    });
+
+    if (!user) {
+      res.json({
+        code: 400,
+        message: "Email không tồn tại!"
+      });
+      return;
+    }
+
+    if (md5(password) !== user.password) {
+      res.json({
+        code: 400,
+        message: "Sai mật khẩu!"
+      });
+      return;
+    }
+
+    if (user.status != "active") {
+      res.json({
+        code: 400,
+        message: "Tài khoản đã bị khóa!"
+      });
+      return;
+    }
+
+    const permissions = await Role.findOne({ _id: user.role_id });
+    
+    const token = jwt.sign(
+      { id: user.id },
+      process.env.JWT_SECRET,
+      { expiresIn: '1d' }
+    );
+    
+    res.json({
+      code: 200,
+      message: "Đăng nhập thành công",
+      token: token,
+      fullName: user.fullName,
+      permissions: permissions.permissions
+    });
+  } catch (error) {
+    res.json({
+      code: 400,
+      message: "Đăng nhập thất bại!"
+    });
+  }
+}

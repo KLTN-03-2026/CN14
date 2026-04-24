@@ -1,0 +1,40 @@
+.register_user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  &_form {
+    width: 100%;
+    /* Đảm bảo form chiếm toàn bộ chiều rộng container */
+  }
+
+  &_form h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    /* Thu nhỏ tiêu đề */
+    margin-bottom: 20px;
+  }
+
+  &_form .ant-input-affix-wrapper {
+    border-radius: 5px;
+    /* Bo góc nhẹ */
+  }
+
+  &_form .ant-btn {
+    border-radius: 5px;
+    /* Bo góc nhẹ cho nút */
+    font-size: 1rem;
+  }
+}
+
+.ant-form-item {
+  margin-bottom: 15px;
+  /* Giảm khoảng cách giữa các form items */
+}
+
+.register-form-button {
+  width: 100%;
+  /* Nút bấm rộng bằng form */
+  margin-top: 10px;
+}

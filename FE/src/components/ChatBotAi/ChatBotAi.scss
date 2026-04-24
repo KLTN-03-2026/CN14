@@ -1,0 +1,27 @@
+// .chatbot-toggle-btn {
+//   position: fixed;
+//   bottom: 24px;
+//   right: 24px;
+//   z-index: 9999;
+//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+//   background-color: #1890ff; // Ant Design xanh
+//   border: none;
+
+//   &:hover {
+//     background-color: #40a9ff;
+//   }
+// }
+
+/* Căn giữa icon của nút mở chat react-chat-widget */
+.rcw-launcher {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.rcw-launcher .rcw-open-launcher__icon,
+.rcw-launcher .rcw-close-launcher__icon {
+  margin: 0 !important;
+  position: static !important;
+  transform: none !important;
+}
