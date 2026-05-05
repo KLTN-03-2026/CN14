@@ -22,7 +22,6 @@ function CampaignCreate() {
   const [thumbnail, setThumbnail] = useState("");
 
   const [categories, setCategories] = useState([]);
-  const [brands, setBrands] = useState([]);
   const [products, setProducts] = useState([]);
 
   const { createCampain } = useCampaigns({ token: token });
@@ -32,7 +31,6 @@ function CampaignCreate() {
       const response = await listMaterial(token); // Truyền token vào hàm
       if (response.code === 200) {
         setCategories(response.data.categories);
-        setBrands(response.data.brands);
         setProducts(response.data.products);
       }
     } catch (error) {
@@ -86,18 +84,6 @@ function CampaignCreate() {
                 <Form.Item label="Tiêu đề" name="title"
                   rules={[{ required: true, message: "Nhập tiêu đề" }]}>
                   <Input />
-                </Form.Item>
-              </Col>
-
-              <Col span={24}>
-                <Form.Item label="Thương hiệu" name="brands_id"
-                  rules={[{ required: true, message: "Chọn danh sách thương hiệu" }]}>
-                  <Select
-                    mode="multiple"
-                    style={{ width: '100%' }}
-                    placeholder="Chọn danh sách thương hiệu"
-                    options={brands.map(opt => ({ value: opt._id, label: opt.title }))}
-                  />
                 </Form.Item>
               </Col>
 

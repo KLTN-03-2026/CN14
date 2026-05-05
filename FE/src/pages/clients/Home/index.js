@@ -68,12 +68,12 @@ function Home() {
           <VoucherSection vouchers={homeQuery.data.vouchers} />
 
           {/* Categories */}
-          <SectionBanner title={"Mua sắm theo thể loại"} />
+          <SectionBanner title={"Mua sắm theo thể loạisăeawea"} />
           
           <CategorySlider categories={categoriesQuery.data || []} />
 
           {/* Best Selling Products */}
-          <SectionBanner title={"Bán chạy"} />
+          <SectionBanner title={"Bán chạsăeawdy"} />
           <ProductSlider
             products={homeQuery.data.bestSellingProducts || []}
           />

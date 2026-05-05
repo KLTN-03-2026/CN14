@@ -340,7 +340,7 @@ function FooterClient({ setting }) {
                 <h3 className="font-bold text-sm mb-4 uppercase">Top tìm kiếm</h3>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    "áo sơ mi",
+                    "doraemon nobita",
                     "áo cardigan",
                     "bomber",
                     "jogger",
